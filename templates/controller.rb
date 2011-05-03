@@ -7,7 +7,7 @@ class <%= controller_class_name %>Controller < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml  => @<%= plural_table_name %> }
-      format.json { render :json => <%=class_name%>.group(:<%=scaffold_parameter%>).count.map.to_json }
+      format.json { render :json => @<%= plural_table_name %>.group_by(&:<%=scaffold_parameter%>).map{|x| [x[0],x[1].length]}.to_json }
     end
   end
 
