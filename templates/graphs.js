@@ -7,10 +7,7 @@ var chart;
       url: url,
       dataType: 'json',
       success: function(data) {
-        console.log(data);
-        for( i=0; i < data.length; i++){
-          options.series[i].data = data[i]
-        }
+        options.series[0].data = data
         new Highcharts.Chart(options);
       },
       error: function(status, statusText, responses, headers) {
