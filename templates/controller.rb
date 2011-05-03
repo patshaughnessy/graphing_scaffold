@@ -3,12 +3,11 @@ class <%= controller_class_name %>Controller < ApplicationController
   # GET <%= route_url %>.xml
   def index
     @<%= plural_table_name %>      = <%= orm_class.all(class_name) %>
-    @<%= plural_table_name %>_json = <%=class_name%>.group(:<%=scaffold_parameter%>).count.map.to_json
 
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml  => @<%= plural_table_name %> }
-      format.json { render :json => @<%= plural_table_name %>_json }
+      format.json { render :json => <%=class_name%>.group(:<%=scaffold_parameter%>).count.map.to_json }
     end
   end
 
