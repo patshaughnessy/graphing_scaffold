@@ -10,7 +10,7 @@ Scaffoldhub::Specification.new do
   metadata do
 
     # A short paragraph describing what this scaffold does
-    description "A scaffold that automatically adds AJAX graphing capabilities to a table.  The scaffold assumes that jquery is in place. (https://github.com/lleger/Rails-3-jQuery)  Use the additional parameter to indicate what column the pie graph should build from. "#For example rails generate scaffoldhub browser name:string value:float --scaffold graphing:name"  #Will build a pie chart based of the name of the browsers."
+    description "A scaffold that automatically adds AJAX graphing capabilities to a table.  Use the additional parameter to indicate what column the pie graph should build from. "#For example rails generate scaffoldhub browser name:string value:float --scaffold graphing:name"  #Will build a pie chart based of the name of the browsers."
 
     # 4x3 aspect ratio screen shot
     screenshot 'graphing_screenshot.png'
@@ -51,7 +51,7 @@ Scaffoldhub::Specification.new do
   end
   
   with_options :src => 'templates', :dest => 'public/javascripts' do
-    file 'jquery-1.4.2.js'
+    file 'jquery-1.4.2.min.js'
   end
 
   # Other keywords available are:
