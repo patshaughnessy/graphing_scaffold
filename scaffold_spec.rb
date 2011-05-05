@@ -47,6 +47,11 @@ Scaffoldhub::Specification.new do
     view 'edit.html.erb'
     view 'index.html.erb'
     view 'show.html.erb'
+    view 'layout.erb', :dest => 'app/views/layouts'
+  end
+  
+  with_options :src => 'templates', :dest => 'public/javascripts' do
+    file 'jquery-1.4.2.js'
   end
 
   # Other keywords available are:
