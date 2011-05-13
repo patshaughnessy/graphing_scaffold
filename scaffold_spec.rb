@@ -59,7 +59,7 @@ Scaffoldhub::Specification.new do
   # Define any other generic template - this ERB file will be used to generate
   # a new file - the dest option is required to indicate where to put the new file
   # template 'xyz.html.erb', :dest => 'path/to/xyz.html'
-  template 'templates/graphs.js',   :dest => 'public/javascripts'
+  template 'templates/graphs.js',   :dest => 'public/javascripts', :rename => 'NAME_graph.js'
 
   # Copy any file without running an ERB transformation
   # file 'xyz.html', :dest => 'path/to/xyz.html'
