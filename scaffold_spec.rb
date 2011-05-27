@@ -47,7 +47,7 @@ Scaffoldhub::Specification.new do
     view 'edit.html.erb'
     view 'index.html.erb'
     view 'show.html.erb'
-    view 'layout.erb', :dest => 'app/views/layouts'
+    template 'layout.erb', :dest => 'app/views/layouts', :rename => 'PLURAL_NAME.html.erb'
   end
   
   with_options :src => 'templates', :dest => 'public/javascripts' do
@@ -67,5 +67,13 @@ Scaffoldhub::Specification.new do
 
   file 'templates/highcharts.js',     :dest => 'public/javascripts'
   file 'templates/excanvas.min.js',   :dest => 'public/javascripts'
+
+  post_install_message <<MESSAGE
+Now run "rake db:migrate" to create your new PLURAL_NAME database table.
+Then run your Rails server and open http://localhost:3000/PLURAL_NAME
+to see the index page. After creating a few NAME records you will see a
+pie chart appear showing the number of records grouped on values in the
+SCAFFOLD_PARAMETER column.
+MESSAGE
 
 end
